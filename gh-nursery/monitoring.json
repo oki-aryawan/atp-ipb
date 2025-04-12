@@ -1,0 +1,610 @@
+[
+    {
+        "id": "7487ad587295bcfa",
+        "type": "tab",
+        "label": "ATP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3d60f7947f85f2eb",
+        "type": "ui_button",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 18,
+        "width": 9,
+        "height": 1,
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "5e593f2d62b0ffa8"
+            ]
+        ]
+    },
+    {
+        "id": "1d2bdda9b0e6a589",
+        "type": "ui_gauge",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 10,
+        "width": 13,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Suhu",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 330,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "5e593f2d62b0ffa8",
+        "type": "trigger",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "op1": "20",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "9e38aacb8bc3bf1f"
+            ]
+        ]
+    },
+    {
+        "id": "48764548a38c899f",
+        "type": "mqtt in",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "topic": "esp32/random",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 40,
+        "wires": [
+            [
+                "1d2bdda9b0e6a589",
+                "55acbc78c94e8fd0"
+            ]
+        ]
+    },
+    {
+        "id": "9e38aacb8bc3bf1f",
+        "type": "mqtt out",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "topic": "suhu",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "4101da2e83f354d9",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "597a37f7571abc5d",
+        "type": "aedes broker",
+        "z": "7487ad587295bcfa",
+        "name": "broker MQTT",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "08463c7db02662d2",
+        "type": "debug",
+        "z": "7487ad587295bcfa",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "40971a680320dca1",
+        "type": "inject",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "5e593f2d62b0ffa8"
+            ]
+        ]
+    },
+    {
+        "id": "55acbc78c94e8fd0",
+        "type": "ui_chart",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 1,
+        "width": 13,
+        "height": 8,
+        "label": "Random ESP32",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "15",
+        "removeOlderPoints": "50",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "mqtt_in",
+        "type": "mqtt in",
+        "z": "7487ad587295bcfa",
+        "name": "",
+        "topic": "esp32/sensors",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 120,
+        "y": 500,
+        "wires": [
+            [
+                "dc52aa1b2668386b"
+            ]
+        ]
+    },
+    {
+        "id": "function_node",
+        "type": "function",
+        "z": "7487ad587295bcfa",
+        "name": "Format for PHP",
+        "func": "let t_udara = (Math.random() * 10 + 20).toFixed(2);     // 20.00 - 30.00\nlet rh_udara = (Math.random() * 40 + 40).toFixed(2);    // 40.00 - 80.00\nlet cahaya = Math.floor(Math.random() * 1000);          // 0 - 999\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 20,
+        "wires": [
+            [
+                "http_node"
+            ]
+        ]
+    },
+    {
+        "id": "http_node",
+        "type": "http request",
+        "z": "7487ad587295bcfa",
+        "name": "Send to PHP",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_nursery.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 790,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "debug_node",
+        "type": "debug",
+        "z": "7487ad587295bcfa",
+        "name": "Response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "276d54833cbf097c",
+        "type": "inject",
+        "z": "7487ad587295bcfa",
+        "name": "Generate Random",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 610,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4cfd045878743f26",
+        "type": "debug",
+        "z": "7487ad587295bcfa",
+        "name": "response",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "dc52aa1b2668386b",
+        "type": "function",
+        "z": "7487ad587295bcfa",
+        "name": "Format for PHP",
+        "func": "let t_udara = msg.payload.temperature;\nlet rh_udara = msg.payload.humidity;\nlet cahaya = msg.payload.lux;\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "c9daee4f3b8b50a8"
+            ]
+        ]
+    },
+    {
+        "id": "c9daee4f3b8b50a8",
+        "type": "http request",
+        "z": "7487ad587295bcfa",
+        "name": "Send to PHP",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_nursery.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 560,
+        "wires": [
+            [
+                "4cfd045878743f26"
+            ]
+        ]
+    },
+    {
+        "id": "21a3df411a176370",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "161be934f324e4b4",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 3,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "ed95beb233217dc5",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 4,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "36ef420331af6894",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 5,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "e935949adde7cab0",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f2c19e3c0e1e50cd",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "a97b334bc13bdfb4",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 8,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "dffe21561f5e7a06",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 9,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "2de48f4db551ef59",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 11,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "1d8847dc5e696ca7",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 12,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "47dde533caffe96b",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 13,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "71c5e684e9ef3cd9",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 14,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "d67550799df0af5e",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 15,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "41d21f3c086916bd",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 16,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "55c7c75cb48ad738",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 17,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "2dc59e14b05a21bb",
+        "type": "ui_spacer",
+        "z": "7487ad587295bcfa",
+        "name": "spacer",
+        "group": "27e6d27e5c7a4b5e",
+        "order": 19,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "27e6d27e5c7a4b5e",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "7e3c3d376f923ce1",
+        "order": 1,
+        "disp": true,
+        "width": 17,
+        "collapse": false
+    },
+    {
+        "id": "4101da2e83f354d9",
+        "type": "mqtt-broker",
+        "name": "oki",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7e3c3d376f923ce1",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
