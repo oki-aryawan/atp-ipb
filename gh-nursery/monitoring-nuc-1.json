@@ -1,0 +1,1045 @@
+[
+    {
+        "id": "042acc9733ebc3bc",
+        "type": "tab",
+        "label": "NUC ATP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c0fd519ec5e45b97",
+        "type": "group",
+        "z": "042acc9733ebc3bc",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "91bae9643a714a32",
+            "92b6d5a880ef7ee1",
+            "be9c3e2a0d8245f1",
+            "2cf30570fe8d9f8c",
+            "689b0c1ddc5d9ca0",
+            "3be70272ad3df7b6",
+            "eae98fe912db7470",
+            "2f8f0b6794e2acce",
+            "d6f7b4a9261f731b"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 712,
+        "h": 202
+    },
+    {
+        "id": "26ba63b79d792c04",
+        "type": "group",
+        "z": "042acc9733ebc3bc",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "08463c7db02662d2",
+            "function_node",
+            "http_node",
+            "276d54833cbf097c",
+            "0b0768309052bfa8",
+            "d10e3e1a494452d1",
+            "14de8531bbc4784d",
+            "c546a7fe3b8b2ccf",
+            "9754f04582689d6e"
+        ],
+        "x": 34,
+        "y": 259,
+        "w": 812,
+        "h": 262
+    },
+    {
+        "id": "7c9cd7c324f5fb37",
+        "type": "group",
+        "z": "042acc9733ebc3bc",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "568841d81deb0348",
+            "mqtt_in",
+            "dc52aa1b2668386b",
+            "c9daee4f3b8b50a8",
+            "4cfd045878743f26",
+            "cac9405841d694c0",
+            "037c4452d215a8cc",
+            "100c690731815eac",
+            "2ab8272f630724d0",
+            "111d56f40a94c5ca",
+            "43cbf60f6a48eb5f",
+            "bbd26a669d65bf2b",
+            "e29cd2b8755036a1",
+            "a291dd1c14ccc96b"
+        ],
+        "x": 34,
+        "y": 559,
+        "w": 792,
+        "h": 262
+    },
+    {
+        "id": "8f6b06cfa2c5b107",
+        "type": "group",
+        "z": "042acc9733ebc3bc",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "64b4a141ce322e14",
+            "8ac23281ccfcd9c7",
+            "1a7b15e91c2f1163",
+            "6bf36985eb53e1ac",
+            "2aba9e070d970ac3",
+            "d90bc374c9276739",
+            "6e78eab40285b4f1",
+            "d969330a9ab743af"
+        ],
+        "x": 34,
+        "y": 859,
+        "w": 692,
+        "h": 162
+    },
+    {
+        "id": "91bae9643a714a32",
+        "type": "ui_gauge",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "group": "c3bfd7122715e9fe",
+        "order": 1,
+        "width": 7,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "celcius",
+        "format": "{{value}}",
+        "min": "15",
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "20",
+        "seg2": "35",
+        "diff": false,
+        "className": "",
+        "x": 490,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "92b6d5a880ef7ee1",
+        "type": "ui_gauge",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "group": "c3bfd7122715e9fe",
+        "order": 3,
+        "width": 7,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "70",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "be9c3e2a0d8245f1",
+        "type": "inject",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "2cf30570fe8d9f8c",
+                "689b0c1ddc5d9ca0"
+            ]
+        ]
+    },
+    {
+        "id": "2cf30570fe8d9f8c",
+        "type": "random",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "low": "15",
+        "high": "35",
+        "inte": "true",
+        "property": "payload",
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "91bae9643a714a32",
+                "eae98fe912db7470"
+            ]
+        ]
+    },
+    {
+        "id": "689b0c1ddc5d9ca0",
+        "type": "random",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "low": "100",
+        "high": 10,
+        "inte": "true",
+        "property": "payload",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "92b6d5a880ef7ee1",
+                "2f8f0b6794e2acce"
+            ]
+        ]
+    },
+    {
+        "id": "3be70272ad3df7b6",
+        "type": "ui_chart",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "",
+        "group": "c3bfd7122715e9fe",
+        "order": 2,
+        "width": 12,
+        "height": 8,
+        "label": "Data Log",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cubic",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "100",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 660,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eae98fe912db7470",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "temp",
+        "func": "msg.topic=\"Temperature\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "3be70272ad3df7b6"
+            ]
+        ]
+    },
+    {
+        "id": "2f8f0b6794e2acce",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "hum",
+        "func": "msg.topic=\"Humidity\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 160,
+        "wires": [
+            [
+                "3be70272ad3df7b6"
+            ]
+        ]
+    },
+    {
+        "id": "d6f7b4a9261f731b",
+        "type": "comment",
+        "z": "042acc9733ebc3bc",
+        "g": "c0fd519ec5e45b97",
+        "name": "dummy data",
+        "info": "",
+        "x": 130,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "08463c7db02662d2",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "node1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "function_node",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "Format for PHP",
+        "func": "let t_udara = (Math.random() * 10 + 20).toFixed(2);     // 20.00 - 30.00\nlet rh_udara = (Math.random() * 40 + 40).toFixed(2);    // 40.00 - 80.00\nlet cahaya = Math.floor(Math.random() * 1000);          // 0 - 999\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 360,
+        "wires": [
+            [
+                "http_node",
+                "d10e3e1a494452d1",
+                "14de8531bbc4784d"
+            ]
+        ]
+    },
+    {
+        "id": "http_node",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "Send to PHP Node1",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node1.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 540,
+        "y": 360,
+        "wires": [
+            [
+                "08463c7db02662d2"
+            ]
+        ]
+    },
+    {
+        "id": "276d54833cbf097c",
+        "type": "inject",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "random",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b0768309052bfa8",
+        "type": "comment",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "dummy data tp DB",
+        "info": "",
+        "x": 170,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d10e3e1a494452d1",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "Send to PHP Node2",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node2.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 540,
+        "y": 420,
+        "wires": [
+            [
+                "c546a7fe3b8b2ccf"
+            ]
+        ]
+    },
+    {
+        "id": "14de8531bbc4784d",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "Send to PHP  Node3",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node3.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 540,
+        "y": 480,
+        "wires": [
+            [
+                "9754f04582689d6e"
+            ]
+        ]
+    },
+    {
+        "id": "c546a7fe3b8b2ccf",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "node2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "9754f04582689d6e",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "26ba63b79d792c04",
+        "name": "node3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "568841d81deb0348",
+        "type": "aedes broker",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "MQTT Broker",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "memory",
+        "dburl": "",
+        "usetls": false,
+        "x": 130,
+        "y": 600,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "mqtt_in",
+        "type": "mqtt in",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "",
+        "topic": "esp32/node1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "dc52aa1b2668386b"
+            ]
+        ]
+    },
+    {
+        "id": "dc52aa1b2668386b",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "Format for PHP",
+        "func": "let t_udara = msg.payload.temperature;\nlet rh_udara = msg.payload.humidity;\nlet cahaya = msg.payload.lux;\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 660,
+        "wires": [
+            [
+                "c9daee4f3b8b50a8"
+            ]
+        ]
+    },
+    {
+        "id": "c9daee4f3b8b50a8",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "PHP node1",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node1.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 660,
+        "wires": [
+            [
+                "4cfd045878743f26"
+            ]
+        ]
+    },
+    {
+        "id": "4cfd045878743f26",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "MQTT node1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cac9405841d694c0",
+        "type": "mqtt in",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "",
+        "topic": "esp32/node2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "037c4452d215a8cc"
+            ]
+        ]
+    },
+    {
+        "id": "037c4452d215a8cc",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "Format for PHP",
+        "func": "let t_udara = msg.payload.temperature;\nlet rh_udara = msg.payload.humidity;\nlet cahaya = msg.payload.lux;\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 720,
+        "wires": [
+            [
+                "100c690731815eac"
+            ]
+        ]
+    },
+    {
+        "id": "100c690731815eac",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "PHP node2",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node2.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 720,
+        "wires": [
+            [
+                "2ab8272f630724d0"
+            ]
+        ]
+    },
+    {
+        "id": "2ab8272f630724d0",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "MQTT node2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "111d56f40a94c5ca",
+        "type": "mqtt in",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "",
+        "topic": "esp32/node3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 130,
+        "y": 780,
+        "wires": [
+            [
+                "43cbf60f6a48eb5f"
+            ]
+        ]
+    },
+    {
+        "id": "43cbf60f6a48eb5f",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "Format for PHP",
+        "func": "let t_udara = msg.payload.temperature;\nlet rh_udara = msg.payload.humidity;\nlet cahaya = msg.payload.lux;\n\nmsg.headers = {\n    'Content-Type': 'application/x-www-form-urlencoded'\n};\n\nmsg.payload = `t_udara=${t_udara}&rh_udara=${rh_udara}&cahaya=${cahaya}`;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 780,
+        "wires": [
+            [
+                "bbd26a669d65bf2b"
+            ]
+        ]
+    },
+    {
+        "id": "bbd26a669d65bf2b",
+        "type": "http request",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "PHP node3",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://digitalfarming.my.id/ds_atp/_db/api_sensor_gh_node3.php",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 780,
+        "wires": [
+            [
+                "e29cd2b8755036a1"
+            ]
+        ]
+    },
+    {
+        "id": "e29cd2b8755036a1",
+        "type": "debug",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "MQTT node3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "a291dd1c14ccc96b",
+        "type": "comment",
+        "z": "042acc9733ebc3bc",
+        "g": "7c9cd7c324f5fb37",
+        "name": "MQTT with ESP32",
+        "info": "",
+        "x": 350,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "64b4a141ce322e14",
+        "type": "influxdb out",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "influxdb": "cc29ecbefc66c1e3",
+        "name": "node1-temp",
+        "measurement": "temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "a07f25d64290e19e",
+        "bucket": "node1",
+        "x": 630,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "8ac23281ccfcd9c7",
+        "type": "mqtt in",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "name": "",
+        "topic": "esp32/node1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4101da2e83f354d9",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 130,
+        "y": 900,
+        "wires": [
+            [
+                "1a7b15e91c2f1163",
+                "6bf36985eb53e1ac",
+                "2aba9e070d970ac3"
+            ]
+        ]
+    },
+    {
+        "id": "1a7b15e91c2f1163",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "name": "Temp",
+        "func": "msg.payload = [\n    {\n        measurement: \"temperature\",\n        fields: {\n            value: msg.payload.temperature\n        },\n        tags: {\n            sensor: \"esp32_node1\"\n        }\n    }\n];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 900,
+        "wires": [
+            [
+                "64b4a141ce322e14"
+            ]
+        ]
+    },
+    {
+        "id": "6bf36985eb53e1ac",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "name": "Hum",
+        "func": "msg.payload = [\n    {\n        measurement: \"humidity\",\n        fields: {\n            value: msg.payload.humidity\n        },\n        tags: {\n            sensor: \"esp32_node1\"\n        }\n    }\n];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 940,
+        "wires": [
+            [
+                "d90bc374c9276739"
+            ]
+        ]
+    },
+    {
+        "id": "2aba9e070d970ac3",
+        "type": "function",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "name": "Lux",
+        "func": "msg.payload = [\n    {\n        measurement: \"lux\",\n        fields: {\n            value: msg.payload.lux\n        },\n        tags: {\n            sensor: \"esp32_node1\"\n        }\n    }\n];\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 980,
+        "wires": [
+            [
+                "6e78eab40285b4f1"
+            ]
+        ]
+    },
+    {
+        "id": "d90bc374c9276739",
+        "type": "influxdb out",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "influxdb": "cc29ecbefc66c1e3",
+        "name": "node1-hum",
+        "measurement": "humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "a07f25d64290e19e",
+        "bucket": "node1",
+        "x": 630,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "6e78eab40285b4f1",
+        "type": "influxdb out",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "influxdb": "cc29ecbefc66c1e3",
+        "name": "node1-lux",
+        "measurement": "lux",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "a07f25d64290e19e",
+        "bucket": "node1",
+        "x": 620,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "d969330a9ab743af",
+        "type": "comment",
+        "z": "042acc9733ebc3bc",
+        "g": "8f6b06cfa2c5b107",
+        "name": "Upload to InfluxDB",
+        "info": "",
+        "x": 150,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "c3bfd7122715e9fe",
+        "type": "ui_group",
+        "name": "Monitoring Greenhouse",
+        "tab": "1f87f59ba2cc7ba0",
+        "order": 1,
+        "disp": true,
+        "width": 19,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4101da2e83f354d9",
+        "type": "mqtt-broker",
+        "name": "oki",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cc29ecbefc66c1e3",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "influx",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "https://eu-central-1-1.aws.cloud2.influxdata.com/",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "1f87f59ba2cc7ba0",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
